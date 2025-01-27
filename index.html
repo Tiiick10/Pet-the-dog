@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="gameover" class="hide">
+        <h1>GAME OVER</h1>
+    </div>
+    <div id="optionMenu">
+        <button id="btnSAVE">SAVE</button>
+        <button id="btnRESET">RESET</button>
+    </div>
+    <h1 id="distanceTitle">
+        <span id="chocolatCount">0</span> 
+        <img id="imgChocolat" height="50" width="50" src="./img/chocolat.png" alt="">
+    </h1>
+    <div id="inventaire">
+        <div>
+            <span id="buddyCount">0</span>
+            <img width="70px" src="./img/dog_icon.png" alt="">
+        </div>
+    </div>
+    <div class="btnList">
+        <span>ACTION</span>
+        <button id="btnFeed">feed</button>
+        <button id="btnPet">pet</button>
+        <button id="btnClean">clean</button>
+    </div>
+    <div class="barList">
+        <div id="foodBar">
+            <span>FOOD</span>
+            <div id="foodValue">
+
+            </div>
+        </div>
+        <div id="loveBar">
+            <span>LOVE</span>
+            <div id="loveValue">
+
+            </div>
+        </div>
+        <div id="poopyBar">
+            <span>POOPY</span>
+            <div id="poopyValue">
+
+            </div>
+        </div>
+        <div id="poopCount">
+            <!-- les petits cacas seront produits ici -->
+        </div>
+    </div>
+    <div class="shopList">
+        <div class="helpTextZone">
+        </div>
+        <span class="ti">SHOP</span>
+        <button id="btnBuyBuddy" class="btnShop">
+            <span>Buy</span>
+            <img height="100%" src="./img/dog_icon.png" alt="">
+            <span>for</span>
+            <span class="cost">100</span>
+            <img height="100%" src="./img/chocolat.png" alt=""> 
+        </button>
+    </div>
+    <button id="btnExplore">
+        Explore
+    </button>
+    <img id="imgDog" src="./img/mad_dog.png" alt="">
+
+    <script src="./main.js"></script>
+</body>
+</html>

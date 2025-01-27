@@ -1,0 +1,268 @@
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: skyblue;
+}
+
+#imgChocolat{
+    transform: translateY(10px);
+}
+
+#imgDog{
+    height: 50%;
+    width: auto;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.big{
+    transform: scale(1.6);
+}
+
+#btnExplore{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: rgb(55, 219, 55);
+    font-family: Impact;
+    color: black;
+    position: absolute;
+    bottom: 5%;
+    border: none;
+    transition: 0.3s ease;
+}
+
+
+#distanceTitle{
+    position: absolute;
+    top: 5%;
+    
+}
+#btnExplore:hover{
+    color: white;
+    background-color: rgb(18, 79, 18);
+}
+
+#btnExplore:active{
+    transform: scale(0.7);
+}
+
+.btnList{
+    height: 200px;
+    width: 200px;
+    border: 2px solid white;
+    position: absolute;
+    left: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    bottom: 5%;
+}
+.btnList span, .shopList .ti, .barList .ti{
+    position: absolute;
+    top: -20px;
+    background-color: skyblue;
+    font-size: 20px;
+    padding: 5px 15px;
+    border: 2px solid white;
+}
+.shopList{
+    height: 200px;
+    width: 200px;
+    border: 2px solid white;
+    position: absolute;
+    left: 2%;
+    top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.barList{
+    height: 200px;
+    width: 200px;
+    border: 2px solid white;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    right: 2%;
+}
+
+#foodBar, #loveBar, #poopyBar{
+    width: 90%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    background-color: rgb(74, 74, 74);
+    overflow: hidden;
+}
+
+#foodBar span, #loveBar span, #poopyBar span{
+    position: absolute;
+    z-index: 2;
+    left: 35%;
+}
+
+#foodValue{
+    transition: 0.3s ease;
+    position: absolute;
+    background-color: orange;
+    height: 100%;
+}
+#poopyValue{
+    transition: 0.3s ease;
+    position: absolute;
+    background-color: rgb(81, 52, 0);
+    height: 100%;
+}
+#loveValue{
+    transition: 0.3s ease;
+    position: absolute;
+    background-color: pink;
+    height: 100%;
+}
+
+button{
+    width: 80%;
+    height: 45px;
+    padding: 5px;
+    border: 2px solid white;
+    background-color: skyblue;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#btnFeed{
+    background-color: orange;
+    color: black;
+}
+#btnFeed:hover{
+    color: white;
+    background-color: rgb(130, 93, 25);
+}
+
+#btnClean{
+    background-color: aqua;
+    color: black;
+}
+#btnClean:hover{
+    background-color: rgb(5, 78, 78);
+    color: white;
+}
+
+#btnPet{
+    color: black;
+    background-color: pink;
+}
+#btnPet:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(106, 62, 69);
+}
+
+
+
+@keyframes petpet {
+    0%{
+        transform: scaleY(1);
+    }
+    100%{
+        transform: scaleY(0.7);
+    }
+}
+
+
+
+#gameover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    z-index: 3;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: skyblue;
+}
+.hide{
+    display: none !important; 
+}
+
+#poopCount{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    height: 20px;
+}
+
+#poopCount img{
+    height: 20px;
+    width: 20px;
+}
+
+.btnShop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.btnShop:hover{
+    background-color: rgb(28, 230, 28);
+}
+
+.helpTextZone{
+    position: absolute;
+    width: 100%;
+    display: flex;    
+    height: 60px;
+    padding: 10px;
+    bottom: -40%;
+}
+
+#inventaire{
+    position: absolute;
+    top: 5%;
+    right: 2%;
+
+}
+
+#inventaire div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 70px;
+}
+
+#optionMenu{
+    height: 100px;
+    width: 100px; 
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+}
+
+#btnSAVE{
+    background-color: rgb(19, 163, 19);
+    color: white;
+}
