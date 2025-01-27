@@ -100,7 +100,7 @@ btnPet.addEventListener("click", () => restoreLove(LOVE_RESTORE))
 let btnBuyBuddy = document.getElementById("btnBuyBuddy")
 let spanBuddyCount = document.getElementById("buddyCount")
 
-let BUDDY_COST = 100
+let BUDDY_COST = 10
 let BUDDY_COUNT = 0
 let BUDDY_CHOCOLAT_BY_SEC = 1
 let BUDDY_LIST = []
