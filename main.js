@@ -139,20 +139,20 @@ btnBuyBuddy.addEventListener("click", () => {
 
 // BONUS : Acheter une fonction pour augmenter regenfood
 
-let FOOD_REGEN_COST = 500;
-let hasFoodRegen = false;
+let FOOD_REGEN_COST = 500
+let hasFoodRegen = false
 
 document.getElementById("btnFoodRegen").addEventListener("click", () => {
     if (CHOCOLAT >= FOOD_REGEN_COST && !hasFoodRegen) {
-        CHOCOLAT -= FOOD_REGEN_COST;
-        chocolatCount.innerText = CHOCOLAT;
-        hasFoodRegen = true;
+        CHOCOLAT -= FOOD_REGEN_COST
+        chocolatCount.innerText = CHOCOLAT
+        hasFoodRegen = true
 
         // Activer la régénération
         setInterval(() => {
-            restoreFood(20);
-            restoreLove(5);
-        }, 2000);
+            restoreFood(20)
+            restoreLove(5)
+        }, 2000)
     }
 })
 
@@ -161,30 +161,30 @@ document.getElementById("btnFoodRegen").addEventListener("click", () => {
 // Ajouter un excrément
 
 function addPoop() {
-    let poopContainer = document.getElementById("poopCount");
-    let poop = document.createElement("img");
-    poop.src = "./img/poop.png";
-    poop.classList.add("poop");
+    let poopContainer = document.getElementById("poopCount")
+    let poop = document.createElement("img")
+    poop.src = "./img/poop.png"
+    poop.classList.add("poop")
 
     poop.addEventListener("click", () => {
-        poop.remove();
-        POOPY = Math.max(POOPY - 10, 0);
-        updateBars();
-    });
+        poop.remove()
+        POOPY = Math.max(POOPY - 10, 0)
+        updateBars()
+    })
 
-    poopContainer.appendChild(poop);
-    POOPY = Math.min(POOPY + 10, 100);
-    updateBars();
-    checkPoopyEffect();
+    poopContainer.appendChild(poop)
+    POOPY = Math.min(POOPY + 10, 100)
+    updateBars()
+    checkPoopyEffect()
 }
 
 // Vérifier les effets de la barre POOPY
 
 function checkPoopyEffect() {
     if (POOPY >= 80) {
-        LOVE_LOST_BY_SEC = 4; // Double la perte d'amour
+        LOVE_LOST_BY_SEC = 4 // Double la perte d'amour
     } else {
-        LOVE_LOST_BY_SEC = 2; // Revenir à la normale
+        LOVE_LOST_BY_SEC = 2 // Revenir à la normale
     }
 }
 
@@ -192,16 +192,16 @@ function checkPoopyEffect() {
 
 setInterval(() => {
     if (Math.random() < 0.3) { // 30% de chance toutes les 5 secondes
-        addPoop();
+        addPoop()
     }
-}, 5000);
+}, 5000)
 
 document.getElementById("btnClean").addEventListener("click", () => {
-    let poopContainer = document.getElementById("poopCount");
-    poopContainer.innerHTML = ""; // Supprimer tous les excréments
-    POOPY = 0; // Réinitialiser la barre POOPY
-    updateBars();
-});
+    let poopContainer = document.getElementById("poopCount")
+    poopContainer.innerHTML = "" // Supprimer tous les excréments
+    POOPY = 0 // Réinitialiser la barre POOPY
+    updateBars()
+})
 
 
 
@@ -223,47 +223,47 @@ function checkGameOver() {
 // Sauvegarder les données
 
 function saveGame() {
-    localStorage.setItem("LOVE", LOVE);
-    localStorage.setItem("FOOD", FOOD);
-    localStorage.setItem("POOPY", POOPY);
-    localStorage.setItem("CHOCOLAT", CHOCOLAT);
-    localStorage.setItem("BUDDY_COUNT", BUDDY_COUNT);
+    localStorage.setItem("LOVE", LOVE)
+    localStorage.setItem("FOOD", FOOD)
+    localStorage.setItem("POOPY", POOPY)
+    localStorage.setItem("CHOCOLAT", CHOCOLAT)
+    localStorage.setItem("BUDDY_COUNT", BUDDY_COUNT)
 }
 
 // Charger les données
 
 function loadGame() {
-    LOVE = parseInt(localStorage.getItem("LOVE")) || 100;
-    FOOD = parseInt(localStorage.getItem("FOOD")) || 100;
-    POOPY = parseInt(localStorage.getItem("POOPY")) || 0;
-    CHOCOLAT = parseInt(localStorage.getItem("CHOCOLAT")) || 0;
-    BUDDY_COUNT = parseInt(localStorage.getItem("BUDDY_COUNT")) || 0;
+    LOVE = parseInt(localStorage.getItem("LOVE")) || 100
+    FOOD = parseInt(localStorage.getItem("FOOD")) || 100
+    POOPY = parseInt(localStorage.getItem("POOPY")) || 0
+    CHOCOLAT = parseInt(localStorage.getItem("CHOCOLAT")) || 0
+    BUDDY_COUNT = parseInt(localStorage.getItem("BUDDY_COUNT")) || 0
 
-    chocolatCount.innerText = CHOCOLAT;
-    spanBuddyCount.innerText = BUDDY_COUNT;
-    updateBars();
+    chocolatCount.innerText = CHOCOLAT
+    spanBuddyCount.innerText = BUDDY_COUNT
+    updateBars()
 }
 
 // Boutons SAVE/RESET
 
-document.getElementById("btnSAVE").addEventListener("click", saveGame);
+document.getElementById("btnSAVE").addEventListener("click", saveGame)
 document.getElementById("btnRESET").addEventListener("click", () => {
-    localStorage.clear();
-    location.reload();
-});
+    localStorage.clear()
+    location.reload()
+})
 
 // Recréer les intervalles des buddies après le chargement
 
 function recreateBuddyIntervals() {
-    for (let i = 0; i < BUDDY_COUNT; i++) {
+    for (let i = 0 ; i < BUDDY_COUNT ; i++) {
         let intervalId = setInterval(() => {
-            plusChocolat(BUDDY_CHOCOLAT_BY_SEC);
-        }, 1000);
-        BUDDY_LIST.push(intervalId);
+            plusChocolat(BUDDY_CHOCOLAT_BY_SEC)
+        }, 1000)
+        BUDDY_LIST.push(intervalId)
     }
 }
 
 // Charger les données au démarrage et recréer les intervalles
 
-loadGame();
-recreateBuddyIntervals();
+loadGame()
+recreateBuddyIntervals()
