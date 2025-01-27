@@ -122,6 +122,10 @@ btnBuyBuddy.addEventListener("click", () => {
     }
 })
 
+// BONUS : Acheter une fonction pour augmenter la barre de nourriture (regenfood)
+
+
+
 // Objectif 6 : Prévoir une fin de partie
 
 let divGameover = document.getElementById("gameover")
